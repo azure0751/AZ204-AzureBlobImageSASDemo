@@ -1,6 +1,6 @@
 # AzureBlobImageSASDemo
 
-ASP.NET Core MVC demo (NET 8.0) that lists images from an Azure Blob Storage container and generates **5-minute SAS URLs** for each image.
+ASP.NET Core MVC demo (NET 9.0) that lists images from an Azure Blob Storage container and generates **5-minute SAS URLs** for each image.
 
 ## Configuration (environment variables)
 
@@ -19,7 +19,7 @@ dotnet run
 Build and run with Docker (example):
 ```bash
 docker build -t azureblobimagesasdemo .
-docker run -e AZURE_STORAGE_CONNECTION_STRING="<your-conn-str>" -e AZURE_BLOB_CONTAINER_NAME="images" -p 5000:80 azureblobimagesasdemo
+docker run -e AZURE_STORAGE_CONNECTION_STRING="<your-conn-str>" -e AZURE_BLOB_CONTAINER_NAME="images" -p 5000:8080 azureblobimagesasdemo
 ```
 
 ## Notes
