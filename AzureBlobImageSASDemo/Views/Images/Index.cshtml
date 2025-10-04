@@ -1,0 +1,30 @@
+@model IEnumerable<AzureBlobImageSASDemo.Models.ImageViewModel>
+@{
+    ViewData["Title"] = "Images from Azure Blob";
+}
+
+<h2>Images from Azure Blob Storage (SAS valid for 5 minutes)</h2>
+
+@if(ViewBag.Error != null)
+{
+    <div style="color: red; font-weight: bold;">@ViewBag.Error</div>
+}
+else
+{
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        @foreach (var image in Model)
+        {
+            <div style="text-align:center; width: 220px;">
+                <img src="@image.SasUrl" alt="@image.FileName" style="max-width:200px; max-height:200px; border:1px solid #ccc; object-fit: contain;" />
+                <p style="word-break: break-all;">@image.FileName</p>
+            </div>
+        }
+    </div>
+
+    <script>
+        // Auto refresh page before SAS expires (after ~4.5 mins)
+        setTimeout(() => {
+            location.reload();
+        }, 270000); // 4.5 minutes
+    </script>
+}
