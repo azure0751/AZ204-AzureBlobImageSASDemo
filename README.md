@@ -5,6 +5,13 @@ ASP.NET Core MVC demo (NET 9.0) that lists images from an Azure Blob Storage con
 ## Configuration (environment variables)
 
 - `AZURE_STORAGE_CONNECTION_STRING` - connection string for your storage account (should contain account key to allow SAS generation).
+```plaintext
+
+UseDevelopmentStorage=true: This is a special connection string value that tells the Azure Storage client libraries to connect to the local storage emulator (Azurite) instead of a cloud-based Azure Storage account. It essentially acts as a placeholder for the full connection string of the emulator.
+```
+
+
+
 - `AZURE_BLOB_CONTAINER_NAME` - container name that contains image blobs.
 
 Example (Windows PowerShell):
