@@ -16,8 +16,8 @@ namespace AzureBlobImageSASDemo.Controllers
         public ImagesController(IConfiguration configuration)
         {
             // Prefer configuration values (which can come from env vars) but also fallback to Environment
-            _connectionString =configuration["AZURE_STORAGE_CONNECTION_STRING"] ?? Environment.GetEnvironmentVariable("AZURE_STORAGE_CONNECTION_STRING");
-            _containerName = configuration["AZURE_BLOB_CONTAINER_NAME"] ?? Environment.GetEnvironmentVariable("AZURE_BLOB_CONTAINER_NAME");
+            _connectionString = Environment.GetEnvironmentVariable("AZURE_STORAGE_CONNECTION_STRING");
+            _containerName =  Environment.GetEnvironmentVariable("AZURE_BLOB_CONTAINER_NAME");
         }
 
         public IActionResult Index()
